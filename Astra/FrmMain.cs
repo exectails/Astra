@@ -20,7 +20,6 @@ namespace Astra
 
 		private string _openFilePath;
 		private Prop _workProp;
-		//private Prop _selectedPropTemp;
 		private Shape _selectedShape;
 
 		/// <summary>
@@ -49,6 +48,9 @@ namespace Astra
 
 			this.SetChanges(false);
 			this.UpdatePropButtons(null);
+
+			if (args.Length > 0 && Path.GetExtension(args[0]) == ".plt")
+				this.Open(args[0]);
 		}
 
 		/// <summary>
